@@ -35,6 +35,8 @@ const DetailScreen = ({navigation}) => {
       <Button title='Go to Detail Screen.. again 😇' onPress={()=> navigation.push('Detail')}/>
       <Button title='Go to Home Screen' onPress={()=> navigation.navigate('Home')}/>
       <Button title='Go Back Function ' onPress={()=> navigation.goBack()}/>
+      <Button title='pop To Top Function ' onPress={()=> navigation.popToTop()}/>
+
     </View>
   );
 };
@@ -53,7 +55,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} options={{headerStyle:{backgroundColor:'#009387'},headerTintColor:'#ffff', headerTitleStyle:{fontWeight:'bold'}}}/>
         <Stack.Screen name="Detail" component={DetailScreen} />
       </Stack.Navigator>
     </NavigationContainer>
