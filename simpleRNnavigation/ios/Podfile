@@ -8,6 +8,7 @@ target 'simpleRNnavigation' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+
   target 'simpleRNnavigationTests' do
     inherit! :complete
     # Pods for testing
