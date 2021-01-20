@@ -2,6 +2,7 @@ import React from 'react';
 import {Button} from 'react-native';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import HomeScreen from './HomeScreen';
 import DetailsScreen from './DetailsScreen';
@@ -24,7 +25,7 @@ const MainTabScreen = () => (
       options={{
         tabBarLabel: 'Home',
         tabBarIcon: ({color}) => (
-          <Button title = '1' color={color} size={26} />
+          <Icon name="ios-home" color={color} size={26} />
         ),
       }}
     />
@@ -34,7 +35,7 @@ const MainTabScreen = () => (
       options={{
         tabBarLabel: 'Updates',
         tabBarIcon: ({color}) => (
-          <Button title = '2' color={color} size={26} />
+          <Icon name="ios-notifications" color={color} size={26} />
         ),
       }}
     />
@@ -44,7 +45,7 @@ const MainTabScreen = () => (
       options={{
         tabBarLabel: 'Profile',
         tabBarIcon: ({color}) => (
-          <Button title = '3' color={color} size={26} />
+          <Icon name="ios-person" color={color} size={26} />
         ),
       }}
     />
@@ -54,7 +55,7 @@ const MainTabScreen = () => (
       options={{
         tabBarLabel: 'Explore',
         tabBarIcon: ({color}) => (
-          <Button title = '4' color={color} size={26} />
+          <Icon name="ios-aperture" color={color} size={26} />
         ),
       }}
     />
@@ -80,10 +81,10 @@ const HomeStackScreen = ({navigation}) => (
       options={{
         title: 'Overview',
         headerLeft: () => (
-          <Button
-            title=':::'
+          <Icon.Button
+          name="ios-menu" size={25}
             backgroundColor="#009387"
-            onPress={() => navigation.openDrawer()}></Button>
+            onPress={() => navigation.openDrawer()}/>
         ),
       }}
     />
@@ -106,10 +107,10 @@ const DetailsStackScreen = ({navigation}) => (
       component={DetailsScreen}
       options={{
         headerLeft: () => (
-          <Button
-            title=':::'
+          <Icon
+            title='ios-home'
             backgroundColor="#1f65ff"
-            onPress={() => navigation.openDrawer()}></Button>
+            onPress={() => navigation.openDrawer()}/>
         ),
       }}
     />
