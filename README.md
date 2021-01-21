@@ -1,12 +1,11 @@
-# # Drawer navigation implementation in React Native
+# # create MaterialBottomTabNavigator implementation in React Native
 
-Common pattern in navigation is to use drawer from left (sometimes right) side for navigating between screens.
-
+A material-design themed tab bar on the bottom of the screen that lets you switch between different routes with animation. Routes are lazily initialized - their screen components are not mounted until they are first focused.
 
 ## npm Installations
 
 ```bash
- yarn add @react-navigation/drawer
+ yarn add @react-navigation/material-bottom-tabs react-native-paper
 ```
 ```bash
 npm install @react-navigation/native
@@ -14,7 +13,6 @@ npm install @react-navigation/native
 ```bash
 yarn add react-native-reanimated
 ```
-
 ```bash
 yarn add react-native-gesture-handler
 ```
@@ -35,19 +33,18 @@ pod install
 ## Usage
 
 ```react-native
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { NavigationContainer } from '@react-navigation/native';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
+const Tab = createMaterialBottomTabNavigator();
 
-const Drawer = createDrawerNavigator();
-
-
-<NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Home" component={HomeScreen} />
-        <Drawer.Screen name="Notifications" component={NotificationsScreen} />
-      </Drawer.Navigator>
-    </NavigationContainer>
+function MyTabs() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Settings" component={SettingsScreen} />
+    </Tab.Navigator>
+  );
+}
 
 ```
 ## Packages version
@@ -63,8 +60,8 @@ const Drawer = createDrawerNavigator();
  "ios": "react-native run-ios"
  
  
-## Contributing
-
+## Ref :
+https://reactnavigation.org/docs/material-bottom-tab-navigator
 
 ## License
 [Info.RahulDa](https://)
